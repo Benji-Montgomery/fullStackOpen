@@ -1,3 +1,18 @@
 {
-  "persons": []
+  "persons": [
+    {
+      "name": "asdfasd",
+      "number": "a new number",
+      "date": "2022-11-25T00:06:05.721Z",
+      "important": true,
+      "id": 2
+    },
+    {
+      "name": "asfdsdf",
+      "number": "a new number",
+      "date": "2022-11-25T00:06:10.239Z",
+      "important": true,
+      "id": 3
+    }
+  ]
 }
