@@ -6,7 +6,6 @@ const anecdotesAtStart = [
   'Premature optimization is the root of all evil.',
   'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
 ]
-
 const getId = () => (100000 * Math.random()).toFixed(0)
 
 const asObject = (anecdote) => {
@@ -53,8 +52,8 @@ export const createAnecdote = (content) => {
   }
 }
 
-export const voteAnecdote = (id) => {
-  console.log('voting... for ', id)
+export const VoteAnecdote = (id) => {
+  console.log('initial reducer', id)
   return {
     type: 'VOTE',
     data: { id }
