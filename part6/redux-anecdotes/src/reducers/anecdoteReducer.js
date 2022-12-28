@@ -38,10 +38,10 @@ const anecdoteSlice = createSlice({
       const content = action.payload
       console.log('createAnecdote is running')
 
-      state.push({
+      state.push(
         content,
-        id: generateId()
-      })
+        //id: generateId()
+      )
     },
     setAnecdotes(state, action) {
       return action.payload
