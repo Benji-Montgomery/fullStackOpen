@@ -6,7 +6,6 @@ const Filter = () => {
     const filtered = useSelector(state => state.filter)
     const anecdotes = useSelector(state => state.anecdotes)
     const anecdotesFiltered = anecdotes.filter(x => x.content.includes(filtered))
-    console.log(anecdotesFiltered)
 
     const handleChange = (event) => {
         event.preventDefault()

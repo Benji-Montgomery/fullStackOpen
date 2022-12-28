@@ -6,7 +6,7 @@ const AnecdoteList = () => {
     const anecdotes = useSelector(state => state.anecdotes)
     const dispatch = useDispatch()
     //console.log(anecdotes)
-    anecdotes.sort((a, b) => b.votes - a.votes)
+    //anecdotes.sort((a, b) => b.votes - a.votes)
     const handleVote = (anecdote) => {
       dispatch(VoteAnecdote(anecdote.id))
       dispatch(manageNotification(anecdote.content, 3000))
