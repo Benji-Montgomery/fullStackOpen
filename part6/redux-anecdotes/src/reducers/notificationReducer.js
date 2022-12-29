@@ -19,11 +19,12 @@ reducers:{
 let timeoutID
 export const manageNotification = (content, timeout) => {
   return (dispatch) => {
+    const timeoutSeconds = timeout * 1000
     dispatch(setNotification(content))
     if (timeoutID) clearTimeout(timeoutID)
     timeoutID = setTimeout(() => {
       dispatch(removeNotification())
-    }, timeout)
+    }, timeoutSeconds)
   }
 }
 

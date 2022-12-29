@@ -9,7 +9,7 @@ const AnecdoteList = () => {
     //anecdotes.sort((a, b) => b.votes - a.votes)
     const handleVote = (anecdote) => {
       dispatch(likeAnecdote(anecdote))
-      dispatch(manageNotification(anecdote.content, 3000))
+      dispatch(manageNotification(anecdote.content, 10))
     }
 
     return (
