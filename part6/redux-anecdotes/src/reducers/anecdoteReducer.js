@@ -9,6 +9,7 @@
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { createSlice } from '@reduxjs/toolkit'
+import anecdoteService from '../services/anecdotes'
 
 const baseurl = 'http://localhost:3001/anecdotes'
 
@@ -87,6 +88,13 @@ export const setALL = (content) => {
   return {
     type: 'SET_ALL',
     data: content
+  }
+}
+
+export const initializeAnecdotes = () => {
+  return async dispatch => {
+    const anecdotes = await anecdoteService.getAll()
+    dispatch(setAnecdotes(anecdotes))
   }
 }
 // getAll().then(anecdotes => {
