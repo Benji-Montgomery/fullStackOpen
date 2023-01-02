@@ -1,8 +1,9 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { manageFilter } from "../reducers/filterReducer"
+import { connect } from "react-redux"
 
-const Filter = () => {
-    const dispatch = useDispatch()
+
+const Filter = (props) => {
     const filtered = useSelector(state => state.filter)
     const anecdotes = useSelector(state => state.anecdotes)
     const anecdotesFiltered = anecdotes.filter(x => x.content.includes(filtered))
@@ -10,7 +11,7 @@ const Filter = () => {
     const handleChange = (event) => {
         event.preventDefault()
       // input-field value is in variable event.target.value
-        dispatch(manageFilter(event.target.value))
+        props.manageFilter(event.target.value)
     }
     const style = {
       marginBottom: 10
@@ -38,4 +39,4 @@ const Filter = () => {
     )
   }
   
-  export default Filter
+  export default connect(null, { manageFilter })(Filter)

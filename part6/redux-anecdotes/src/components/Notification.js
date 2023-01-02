@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import { anotherReducer } from '../reducers/notificationReducer'
+import { connect, useSelector } from 'react-redux'
 //import { notifications } from '../reducers/anecdoteReducer'
 
-const Notification = () => {
+const Notification = (props) => {
   //const notification = useSelector(filter, notification)  
   const notification = useSelector(state => state.notification)
   //console.log(notification)
@@ -18,4 +16,4 @@ const Notification = () => {
   )
 }
 
-export default Notification
+export default connect(null, { })(Notification)
