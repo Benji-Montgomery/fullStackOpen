@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { likeAnecdote } from '../reducers/anecdoteReducer'
 import { manageNotification } from '../reducers/notificationReducer'
+import { connect } from 'react-redux'
 
 const AnecdoteList = () => {
     const anecdotes = useSelector(state => state.anecdotes)
